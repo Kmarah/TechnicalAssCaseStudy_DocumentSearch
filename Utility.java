@@ -16,7 +16,7 @@ public class Utility {
         //files.add("hitchhikers.txt");
         //files.add("warp_drive.txt");
         
-        /** Please point to the appropriate folder of your text files...  */
+        /** Please point to the appropriate folder of your search text files...  */
         
         files.add("C:\\sample_text\\french_armed_forces.txt");
         files.add("C:\\sample_text\\hitchhikers.txt");
