@@ -1,0 +1,56 @@
+UserInput Scenarios and Results
+
+/** Validate User entering a search term that cannot be found in all three(3) search files */
+    
+    Actual Results:
+              Enter the search term: Target
+	      Search Method: 1) String Match 2) Regular Expression 3) Indexed:1
+	      C:\sample_text\hitchhikers.txt - 0 matches 
+	      C:\sample_text\warp_drive.txt - 0 matches 
+	      C:\sample_text\french_armed_forces.txt - 0 matches 
+	      Elapsed time: 50 ms
+	      
+/** Validate User entering a search term that can be found in all three(3) search documents */
+
+    Actual Results:
+    	     Enter the search term: is
+             Search Method: 1) String Match 2) Regular Expression 3) Indexed: 2
+    	     C:\sample_text\hitchhikers.txt - 4 matches 
+             C:\sample_text\warp_drive.txt - 3 matches 
+             C:\sample_text\french_armed_forces.txt - 1 matches 
+             Elapsed time: 57 ms
+           
+/** Validate User entering a search term that appears on two of the search documents */
+
+    Actual Results:
+    	     Enter the search term: Following
+             Search Method: 1) String Match 2) Regular Expression 3) Indexed: 3
+             C:\sample_text\hitchhikers.txt - 1 matches 
+             C:\sample_text\warp_drive.txt - 0 matches 
+             C:\sample_text\french_armed_forces.txt - 2 matches 
+             Elapsed time: 51 ms
+             
+/** Edge Case: Validate User searching for a search term on 3 empty search documents */
+
+    Actual Results:
+    	     Enter the search term: Target
+             Search Method: 1) String Match 2) Regular Expression 3) Indexed: 1
+             C:\sample_text\hitchhikers.txt - 0 matches 
+             C:\sample_text\warp_drive.txt - 0 matches 
+             C:\sample_text\french_armed_forces.txt - 0 matches 
+             Elapsed time: 42 ms
+
+/** Edge Case: What will happen if no Search document(s) exist and User try to search for search term */
+
+     Actual Results:
+     Enter the search term: Free
+     Search Method: 1) String Match 2) Regular Expression 3) Indexed: 3
+             Exception in thread "main" java.io.FileNotFoundException: C:\sample_text\french_armed_forces.txt (The system cannot find the file specified)
+     	     at java.io.FileInputStream.open0(Native Method)
+     	     at java.io.FileInputStream.open(FileInputStream.java:195)
+     	     at java.io.FileInputStream.<init>(FileInputStream.java:138)
+     	     at java.util.Scanner.<init>(Scanner.java:611)
+     	     at Utility.readFileToList(Utility.java:34)
+     	     at SimpleStringMatch.search(SimpleStringMatch.java:28)
+     	     at MainUserInput.stringMatch(MainUserInput.java:60)
+	     at MainUserInput.main(MainUserInput.java:34)

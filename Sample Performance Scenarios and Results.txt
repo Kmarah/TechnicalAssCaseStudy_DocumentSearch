@@ -1,0 +1,56 @@
+
+Performance Tests: Scenarios and Results
+
+/*
+  Performance test that does 2 Million searches with random search terms, and measures execution time.
+ */
+
+	Running Indexed test...
+	Time taken: 1799 ms
+
+	Running String Match test...
+	Time taken: 17727080 ms
+
+	Running Regular Expresession test...
+	Time taken: 11284659 ms
+
+/** Performance test that does 200 searches with random search terms, and measures execution time.*/
+
+	Running Indexed test...
+	Time taken: 129 ms
+
+	Running String Match test...
+	Time taken: 2582 ms
+
+	Running Regular Expresession test...
+	Time taken: 920 ms
+
+/** Performance test that does 1 search with random search terms, and measures execution time.*/
+
+	Running Indexed test...
+	Time taken: 92 ms
+
+	Running String Match test...
+	Time taken: 10 ms
+
+	Running Regular Expresession test...
+	Time taken: 14 ms
+	
+/** Performance test that does 2000 searches with random search terms, and measures execution time.*/
+
+	Running Indexed test...
+	Time taken: 95 ms
+
+	Running String Match test...
+	Time taken: 7276 ms
+
+	Running Regular Expresession test...
+	Time taken: 6134 ms
+
+/** Edge Case Scenario: Performance test that does 2000000 searches with random empty search terms, and measures execution time.*/
+
+	Running Indexed test...
+	Exception in thread "main" java.lang.IllegalArgumentException: bound must be positive
+		at java.util.Random.nextInt(Random.java:388)
+		at MainPerfTest.generateRandomString(MainPerfTest.java:94)
+		at MainPerfTest.main(MainPerfTest.java:18)
