@@ -2,24 +2,54 @@ UserInput Scenarios and Results
 
 /** Validate User entering a search term that cannot be found in all three(3) search files */
     
-    Actual Results:
+    Actual Results: String Match
               Enter the search term: Target
 	      Search Method: 1) String Match 2) Regular Expression 3) Indexed:1
 	      C:\sample_text\hitchhikers.txt - 0 matches 
 	      C:\sample_text\warp_drive.txt - 0 matches 
 	      C:\sample_text\french_armed_forces.txt - 0 matches 
 	      Elapsed time: 50 ms
-	      
+    Actual Results: Regular Expression
+              Enter the search term: Target
+              Search Method: 1) String Match 2) Regular Expression 3) Indexed: 2
+              C:\sample_text\hitchhikers.txt - 0 matches 
+              C:\sample_text\warp_drive.txt - 0 matches 
+              C:\sample_text\french_armed_forces.txt - 0 matches 
+              Elapsed time: 143 ms
+   Actual Results: Indexed
+              Enter the search term: Target
+              Search Method: 1) String Match 2) Regular Expression 3) Indexed: 3
+              C:\sample_text\hitchhikers.txt - 0 matches 
+              C:\sample_text\warp_drive.txt - 0 matches 
+              C:\sample_text\french_armed_forces.txt - 0 matches 
+              Elapsed time: 312 ms
+
 /** Validate User entering a search term that can be found in all three(3) search documents */
 
-    Actual Results:
+    Actual Results: String Match
+             Enter the search term: is
+             Search Method: 1) String Match 2) Regular Expression 3) Indexed: 1
+    	     C:\sample_text\hitchhikers.txt - 4 matches 
+             C:\sample_text\warp_drive.txt - 3 matches 
+             C:\sample_text\french_armed_forces.txt - 1 matches 
+             Elapsed time: 565 ms
+    
+    Actual Results: Regular Expression
     	     Enter the search term: is
              Search Method: 1) String Match 2) Regular Expression 3) Indexed: 2
     	     C:\sample_text\hitchhikers.txt - 4 matches 
              C:\sample_text\warp_drive.txt - 3 matches 
              C:\sample_text\french_armed_forces.txt - 1 matches 
-             Elapsed time: 57 ms
-           
+             Elapsed time: 605 ms
+	     
+    Actual Results:
+             Enter the search term: is
+             Search Method: 1) String Match 2) Regular Expression 3) Indexed: 3
+    	     C:\sample_text\hitchhikers.txt - 4 matches 
+             C:\sample_text\warp_drive.txt - 3 matches 
+             C:\sample_text\french_armed_forces.txt - 1 matches 
+             Elapsed time: 1102 ms
+	     
 /** Validate User entering a search term that appears on two of the search documents */
 
     Actual Results:
